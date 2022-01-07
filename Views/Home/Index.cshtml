@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Book>
+@{
+    ViewData["Title"] = "Books";
+}
+
+<div class="text-center flex-parent">
+    @foreach(var book in Model)
+    {
+        <div class="flex-child">
+            <p>@book.ImageSrc</p>
+        
+            <h2>@book.Author</h2>
+        </div>
+    }
+</div>
+
+<div id="details-box">
+    
+</div>
+
+<style>
+    .flex-parent {
+        display: flex;
+    }
+
+    .flex-child {
+        flex: 1;
+    }
+
+    .flex-child img {
+        display: block;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    #top-bar {
+        padding: 0 0 1em 2em;
+        box-shadow: 6px 6px 3px -3px rgba(0,0,0,0.3);
+        -webkit-box-shadow: 6px 6px 3px -3px rgba(0,0,0,0.3);
+        -moz-box-shadow: 6px 6px 3px -3px rgba(0,0,0,0.3);
+    }
+
+</style>
