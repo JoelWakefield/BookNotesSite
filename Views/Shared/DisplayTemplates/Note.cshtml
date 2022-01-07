@@ -1,0 +1,22 @@
+﻿@model BookNotesSite.Models.Note
+
+<div>
+    <h1>@Model.Heading</h1>
+
+    @if(Model.Text != null)
+    {
+        <p>@Model.Text</p>
+    }
+
+    @if(Model.Notes != null)
+    {
+        <ul>
+            @foreach(var note in Model.Notes)
+            {
+                <li>
+                    @Html.DisplayFor(_ => note)
+                </li>
+            }
+        </ul>
+    }
+</div>

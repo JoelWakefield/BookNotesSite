@@ -29,6 +29,6 @@ namespace BookNotesSite.Models
         public string NonAffiliateLink { get; set; }
 
         [JsonProperty(PropertyName = "sections")]
-        public Dictionary<string,List<Note>> Sections { get; set; }
+        public List<Note> Sections { get; set; }
     }
 }

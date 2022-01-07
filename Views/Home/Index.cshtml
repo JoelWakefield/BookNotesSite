@@ -7,10 +7,12 @@
     @foreach(var book in Model)
     {
         <div class="flex-child">
-            <p>@book.ImageSrc</p>
+            <p>@book.Author</p>
         
-            <h2>@book.Author</h2>
+            <h2>@book.Title</h2>
         </div>
+
+        @Html.DisplayFor(book => book)
     }
 </div>
 
