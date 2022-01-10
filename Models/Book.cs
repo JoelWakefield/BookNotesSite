@@ -10,6 +10,8 @@ namespace BookNotesSite.Models
     {
         [JsonProperty(PropertyName = "id")]
         public string Id { get; set; }
+        [JsonProperty(PropertyName = "isbn")]
+        public string Isbn { get; set; }
 
         [JsonProperty(PropertyName = "imageSrc")]
         public string ImageSrc { get; set; }

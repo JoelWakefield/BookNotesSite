@@ -5,19 +5,19 @@
     <h2></h2>
 
     <dl class="row">
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             Author: @Model.Author
         </dd>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             Publish Date: @Model.PublishDate
         </dd>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             Rating: @Model.Rating/10
         </dd>
-        <dd class = "col-sm-10">
+        <dd class="col-sm-10">
             <span>
-                Amazon Link: 
-                <a href="@Model.AffiliateLink">Affiliate Link</a>, 
+                Amazon Link:
+                <a href="@Model.AffiliateLink">Affiliate Link</a>,
                 <a href="@Model.NonAffiliateLink">Non-Affiliate Link</a>
             </span>
         </dd>
@@ -25,7 +25,7 @@
 
     <div>
         <ul class="no-style-list">
-            @foreach(var section in Model.Sections)
+            @foreach (var section in Model.Sections)
             {
                 <li>
                     @Html.DisplayFor(_ => section)
@@ -40,8 +40,9 @@
         list-style: none;
         padding-left: 0;
     }
+
     .item-details {
         background-color: aqua;
-        padding: 2em;
+        padding: 2em 14em 4em 14em;
     }
 </style>
