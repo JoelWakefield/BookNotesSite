@@ -36,9 +36,7 @@ namespace BookNotesSite
                 _memoryCache.Set(
                     cacheKey,
                     books,
-                    new MemoryCacheEntryOptions()
-                        .SetSlidingExpiration(TimeSpan.FromMinutes(5))
-                        .SetAbsoluteExpiration(TimeSpan.FromHours(1))
+                    new MemoryCacheEntryOptions().SetAbsoluteExpiration(TimeSpan.FromDays(10))
                 );
 
                 _logger.LogInformation($"cache {cacheKey} being filled");
