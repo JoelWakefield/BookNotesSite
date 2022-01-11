@@ -13,25 +13,23 @@ namespace BookNotesSite.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly ICosmosDbService _cosmosDbService;
+        private readonly DataHelper _dataHelper;
 
-        public HomeController(ILogger<HomeController> logger, ICosmosDbService cosmosDbService)
+        public HomeController(ILogger<HomeController> logger, DataHelper dataHelper)
         {
             _logger = logger;
-            _cosmosDbService = cosmosDbService ?? throw new ArgumentNullException(nameof(CosmosDbService));
+            _dataHelper = dataHelper;
         }
 
         public async Task<IActionResult> Index()
         {
-            List<Book> books = (await _cosmosDbService.GetMultipleAsync("SELECT * FROM c")).ToList();
-            return View(books);
+            return View(await _dataHelper.GetBooksAsync());
         }
 
         [HttpGet]
         public async Task<ActionResult> Get(string id)
         {
-            var book = await _cosmosDbService.GetAsync(id);
-            return PartialView("GetBook", book);
+            return PartialView("GetBook", await _dataHelper.GetBookAsync(id));
         }
 
 

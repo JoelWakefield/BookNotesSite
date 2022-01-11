@@ -3,8 +3,16 @@
     ViewData["Title"] = "Books";
 }
 
-<div class="nav-bar">
 
+<div class="nav-bar">
+    @foreach(var book in Model)
+    {
+        <div class="nav-item">
+            <img src="@book.ImageSrc"/>
+            <h4>@book.Title</h4>
+        </div>
+        <br/>
+    }
 </div>
 
 <div class="text-center flex-parent">
