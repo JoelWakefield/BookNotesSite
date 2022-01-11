@@ -10,5 +10,6 @@ namespace BookNotesSite.Data
     {
         Task<IEnumerable<Book>> GetMultipleAsync(string query);
         Task<Book> GetAsync(string id);
+        Task CreateAsync(Book book);
     }
 }

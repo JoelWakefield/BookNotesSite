@@ -42,5 +42,10 @@ namespace BookNotesSite.Data
 
             return results;
         }
+
+        public async Task CreateAsync(Book book)
+        {
+            await _container.CreateItemAsync(book, new PartitionKey(book.Id));
+        }
     }
 }

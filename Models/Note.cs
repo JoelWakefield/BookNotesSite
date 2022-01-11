@@ -8,6 +8,11 @@ namespace BookNotesSite.Models
 {
     public class Note
     {
+        [JsonProperty(PropertyName = "id")]
+        public Guid Id { get; set; }
+        [JsonProperty(PropertyName = "parentId")]
+        public Guid ParentId { get; set; }
+
         [JsonProperty(PropertyName = "text")]
         public string Text { get; set; }
         [JsonProperty(PropertyName = "heading")]

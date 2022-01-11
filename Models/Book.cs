@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 
@@ -32,5 +33,21 @@ namespace BookNotesSite.Models
 
         [JsonProperty(PropertyName = "sections")]
         public List<Note> Sections { get; set; }
+
+
+        public void CreateId()
+        {
+            string title = Title.Trim().ToLower();
+
+            //  Remove all symbols
+            string pattern = "[^a-z]";
+            Regex remove = new Regex(pattern);
+            title = remove.Replace(title, "");
+
+            //  Replace white space with dashes
+            pattern = "\\s+";
+            Regex replace = new Regex(pattern);
+            Id = replace.Replace(title, "-");
+        }
     }
 }

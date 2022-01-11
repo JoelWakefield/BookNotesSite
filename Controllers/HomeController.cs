@@ -27,11 +27,6 @@ namespace BookNotesSite.Controllers
             return View(books);
         }
 
-        [HttpGet]
-        public async Task<ActionResult> GetBook(string id) {
-            var book = await _cosmosDbService.GetAsync(id);
-            return PartialView("GetBook", book);
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
