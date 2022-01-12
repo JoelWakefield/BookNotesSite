@@ -2,8 +2,9 @@
     var pageIsOpen = false;
 
     const body = document.querySelector('body');
-    const detailsBox = document.getElementById('details-box');
     const headerBar = document.getElementById('header-bar');
+    const bookshelf = document.getElementById('bookshelf');
+    const detailsBox = document.getElementById('details-box');
 
     body.addEventListener("click", (e) => {
         if ($(e.target).hasClass('get-book'))
@@ -41,27 +42,36 @@
     function animatePage(openPage) {
         //  if direction == false, then reverse the animations
         if (openPage) {
-            detailsBox.classList.remove('detail-slide-out');
+            $('#bookshelf').css('display', 'none');
+
             headerBar.classList.remove('header-slide-in');
+            //bookshelf.classList.remove('bookshelf-fade-in');
+            detailsBox.classList.remove('detail-slide-out');
 
-            void detailsBox.offsetWidth;
             void headerBar.offsetWidth;
+            //void bookshelf.offsetWidth;
+            void detailsBox.offsetWidth;
 
-            detailsBox.classList.add('detail-slide-in');
             headerBar.classList.add('header-slide-out');
+            //bookshelf.classList.add('bookshelf-fade-out');
+            detailsBox.classList.add('detail-slide-in');
 
-            $(headerBar).css('backgroundColor', 'aqua');
+            $(headerBar).css('backgroundColor', '#f8feff');
         } else {
-            detailsBox.classList.remove('detail-slide-in');
             headerBar.classList.remove('header-slide-out');
+            //bookshelf.classList.remove('bookshelf-fade-out');
+            detailsBox.classList.remove('detail-slide-in');
 
-            void detailsBox.offsetWidth;
             void headerBar.offsetWidth;
+            //void bookshelf.offsetWidth;
+            void detailsBox.offsetWidth;
 
-            detailsBox.classList.add('detail-slide-out');
             headerBar.classList.add('header-slide-in');
+            //bookshelf.classList.add('bookshelf-fade-in');
+            detailsBox.classList.add('detail-slide-out');
 
-            $(headerBar).css('backgroundColor', 'deepskyblue');
+            $(headerBar).css('backgroundColor', '#a9d7e0');
+            $('#bookshelf').css('display', 'flex');
         }
 
         pageIsOpen = !pageIsOpen;

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using BookNotesSite.Models;
 using Microsoft.Azure.Cosmos;
 
-namespace BookNotesSite.Data
+namespace BookNotesSite.Services
 {
     public class CosmosDbService : ICosmosDbService
     {

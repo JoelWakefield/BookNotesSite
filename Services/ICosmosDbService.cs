@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BookNotesSite.Models;
 
-namespace BookNotesSite.Data
+namespace BookNotesSite.Services
 {
     public interface ICosmosDbService
     {
