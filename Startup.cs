@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Azure.Storage.Blobs;
 using BookNotesSite.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -28,9 +27,6 @@ namespace BookNotesSite
             services.AddControllersWithViews();
             
             services.AddSingleton<ICosmosDbService>(InitializeCosmosClientInstanceAsync(Configuration.GetSection("CosmosDb")).GetAwaiter().GetResult());
-            services.AddSingleton(_ => new BlobServiceClient(Configuration.GetValue<string>("AzureStorageConnectionKey")));
-
-            services.AddSingleton<IBlobService, BlobService>();
 
             services.AddMemoryCache();
             services.AddScoped<DataHelper>();
